@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@douglasdl/segmentsdisplay",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Segments Display",
   "main": "dist/cjs/index.js",
   "scripts": {

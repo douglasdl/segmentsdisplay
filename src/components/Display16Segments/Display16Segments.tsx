@@ -26,9 +26,10 @@ interface IDisplay16Segments {
     value: string
     colorON?: string
     colorOFF?: string
+    showDot?: boolean
 }
 
-export default function Display16Segments({ size = 100, value, colorON = "#FF0000", colorOFF = "#250303" }: IDisplay16Segments) {
+export default function Display16Segments({ size = 100, value, colorON = "#FF0000", colorOFF = "#250303", showDot = false }: IDisplay16Segments) {
     const [segments, setSegments] = useState<ISegments>({} as ISegments)
 
     function convertSegments(value: string | number): ISegments {
@@ -1382,7 +1383,13 @@ export default function Display16Segments({ size = 100, value, colorON = "#FF000
     }
 
     useEffect(() => {
-        setSegments(convertSegments("0"))
+        setSegments(convertSegments(value))
+        if (showDot) {
+            setSegments({
+                ...segments,
+                dp: true
+            })
+        }
     }, [segments])
 
     return (
