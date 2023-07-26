@@ -1336,28 +1336,48 @@ export default function Display16Segments({ size = 100, value, colorON = "#FF000
                     dp: false
                 }
                 break;
-            case ".":
+            case "°":
                 return {
-                    a1: false,
-                    a2: false,
-                    b: false,
+                    a1: true,
+                    a2: true,
+                    b: true,
                     c: false,
                     d1: false,
                     d2: false,
                     e: false,
-                    f: false,
-                    g1: false,
-                    g2: false,
+                    f: true,
+                    g1: true,
+                    g2: true,
                     h: false,
                     j: false,
                     k: false,
                     l: false,
                     m: false,
                     n: false,
-                    dp: true
+                    dp: false
                 }
                 break;
-
+            case "%":
+                return {
+                    a1: true,
+                    a2: false,
+                    b: false,
+                    c: true,
+                    d1: false,
+                    d2: true,
+                    e: false,
+                    f: true,
+                    g1: true,
+                    g2: true,
+                    h: false,
+                    j: true,
+                    k: true,
+                    l: false,
+                    m: true,
+                    n: true,
+                    dp: false
+                }
+                break;
             default:
                 break;
         }
